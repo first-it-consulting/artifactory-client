@@ -241,7 +241,7 @@ module Artifactory
       #   the URL-safe version of the string
       #
       def url_safe(value)
-        URI.escape(URI.unescape(value.to_s))
+        URI.encode_www_form_component(URI.decode_www_form_component(value.to_s))
       end
     end
 
@@ -351,8 +351,8 @@ module Artifactory
     #
     def to_query_string_parameters(hash = {})
       properties = hash.map do |k, v|
-        key   = URI.escape(k.to_s)
-        value = URI.escape(v.to_s)
+        key   = URI.encode_www_form_component(k.to_s)
+        value = URI.encode_www_form_component(v.to_s)
 
         "#{key}=#{value}"
       end
