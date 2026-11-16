@@ -3,12 +3,13 @@ gemspec
 
 group :test do
   gem "chefstyle"
-  gem "sinatra", "~> 1.4"
-  gem "rspec",   "~> 3.0"
-  gem "webmock", "~> 2.3"
-  gem "rainbow", "< 2.2.1"
+  gem "sinatra", "~> 3.0"
+  gem "ostruct"
+  gem "rspec",   "~> 3.12"
+  gem "webmock", "~> 3.0"
+  gem "rainbow", "~> 3.0"
   # rspec-mocks 3.4.1 breaks tests with 'System level too deep' errors.
-  gem "rspec-mocks", "3.4.0"
+  # removed: rspec-mocks 3.4.1 breaks tests with 'System level too deep' errors.
   gem "simplecov"
   gem "simplecov-console"
 end
